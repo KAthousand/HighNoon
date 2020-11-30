@@ -43,13 +43,13 @@ _The **High Noon** MVP will be a stylized and functional game, with a working sc
 
 [Whimsical](https://whimsical.com/high-noon-kxrUQW4gprh7pZ1eQ1m33)
 
-![Wireframe 1: Login and Create Account](https://imgur.com/ScE8Txf)
+[Wireframe 1: Login and Create Account](https://imgur.com/ScE8Txf)
 
-![Wireframe 2: GameNav and Instructions](https://imgur.com/Xv6o2se)
+[Wireframe 2: GameNav and Instructions](https://imgur.com/Xv6o2se)
 
-![Wireframe 3: GameNav and Game](https://imgur.com/fqE4LXI)
+[Wireframe 3: GameNav and Game](https://imgur.com/fqE4LXI)
 
-![Wireframe 4: PlayerScore and Scoreboard](https://imgur.com/KshD5gL)
+[Wireframe 4: PlayerScore and Scoreboard](https://imgur.com/KshD5gL)
 
 #### Component Tree
 
@@ -92,7 +92,7 @@ src
 
 > Use this section to include a link to your component tree.
 
-[Component tree](url)
+![Component tree](url)
 
 #### Time Estimates
 
@@ -112,7 +112,7 @@ src
 
 #### ERD Model
 
-![ERD Model](https://imgur.com/MW1qsxE)
+[ERD Model](https://imgur.com/MW1qsxE)
 
 <br>
 
