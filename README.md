@@ -1,27 +1,5 @@
 # HighNoon
 
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
-- [Overview](#overview)
-- [MVP](#mvp)
-  - [Goals](#goals)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
-  - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
-    - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
-    - [Time Estimates](#time-estimates)
-  - [Server (Back End)](#server-back-end)
-    - [ERD Model](#erd-model)
-- [Post-MVP](#post-mvp)
-- [Code Showcase](#code-showcase)
-- [Code Issues & Resolutions](#code-issues--resolutions)
-
-<br>
-
 ## Overview
 
 _**High Noon** is a game designed to help increase type speed and accuracy. A user will create an account, play the game, and receive a score based on their ability to type. They will be able to post their scores to a High Score board, as well as comment on the scores posted by other players._
