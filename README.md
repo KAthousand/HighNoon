@@ -98,13 +98,34 @@ src
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Task                         | Priority | Estimated Time | Time Invested | Actual Time |
+| ---------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Build Rails Scaffolding      |    H     |     3 hrs      |     -----     |    -----    |
+| Setup Controller Methods     |    H     |     3 hrs      |     -----     |    -----    |
+| Setup Routes                 |    H     |     3 hrs      |     -----     |    -----    |
+| Build Seed Data for Words    |    H     |     3 hrs      |     -----     |    -----    |
+| Test All Routes              |    H     |     3 hrs      |     -----     |    -----    |
+| Build React Boilerplate      |    H     |     1 hrs      |     -----     |    -----    |
+| Login Screen                 |    H     |     2 hrs      |     -----     |    -----    |
+| CreateAccount Screen         |    H     |     2 hrs      |     -----     |    -----    |
+| Testing Auth Routes and JWT  |    H     |     4 hrs      |     -----     |    -----    |
+| Instruction Screen           |    H     |     1 hrs      |     -----     |    -----    |
+| Basic Game Functionality     |    H     |     5 hrs      |     -----     |    -----    |
+| PlayerScore Screen           |    H     |     2 hrs      |     -----     |    -----    |
+| Scoreboard Screen            |    H     |     3 hrs      |     -----     |    -----    |
+| Test Posting to Scoreboard   |    H     |     2 hrs      |     -----     |    -----    |
+| CommentCard                  |    H     |     2 hrs      |     -----     |    -----    |
+| Test CRUD Comments           |    H     |     5 hrs      |     -----     |    -----    |
+| Basic Styling                |    H     |     4 hrs      |     -----     |    -----    |
+| TOTAL                        |    -     |     48 hrs     |     -----     |    -----    |
+| Post MVP                     |    -     |     -----      |     -----     |    -----    |
+| Advanced Styling             |    L     |     ?????      |     -----     |    -----    |
+| Transition between screens   |    L     |     ?????      |     -----     |    -----    |
+| Moving Outlaw positions      |    L     |     ?????      |     -----     |    -----    |
+| Comment on Comments          |    L     |     ?????      |     -----     |    -----    |
+| Adding Like Table            |    L     |     ?????      |     -----     |    -----    |
+| Building Like Component      |    L     |     ?????      |     -----     |    -----    |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
