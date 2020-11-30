@@ -41,7 +41,7 @@ _The **High Noon** MVP will be a stylized and functional game, with a working sc
 
 #### Wireframes
 
-![Whimsical](https://whimsical.com/high-noon-kxrUQW4gprh7pZ1eQ1m33)
+[Whimsical](https://whimsical.com/high-noon-kxrUQW4gprh7pZ1eQ1m33)
 
 ![Wireframe 1: Login and Create Account](https://imgur.com/ScE8Txf)
 
