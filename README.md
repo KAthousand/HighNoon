@@ -32,7 +32,7 @@ _The **High Noon** MVP will be a stylized and functional game, with a working sc
 | :--------------: | :----------------------------------------- |
 |      React       | _The front end will be built in react._ |
 |   React Router   | _Will provide all routes and links to different pages._ |
-|   axios          | _Used in making CRUD requests._ |
+|   Axios          | _Used in making CRUD requests._ |
 |     Ruby On Rails      | _Managing the back-end with seeded data, controllers, routes, tables, etc.._ |
 
 <br>
@@ -73,12 +73,23 @@ src
       |__ PlayerScore
       |__ ScoreBoard
 |__ containers/
-      |__ MainContainer
+      |__ WordsContainer
+      |__ CommentsContainer
+      |__ ScoresContainer
 |__ components
       |__ shared
-        |__ Header
-        |__ Layout
-        |__ Footer
+      |  |__ Header
+      |  |__ Layout
+      |      |__ Background
+      |  |__ Footer
+      |__ UserInput
+      |__ Timer
+      |__ Lives
+      |__ Outlaw
+      |__ WordBox
+      |__ ScoreCard
+      |__ CommentCard
+      |__ Logo
 |__ services/
       |__ apiConfig.js
       |__ auth.js
