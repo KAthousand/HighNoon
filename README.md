@@ -1,4 +1,4 @@
-# HighNoon
+# High Noon
 
 ## Overview
 
