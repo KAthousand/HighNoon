@@ -1,0 +1,11 @@
+.scoreboard-container {
+  border: 2px solid red;
+}
+
+.score-container {
+  border: 2px solid green;
+}
+
+.comments {
+  border: 2px solid purple;
+}

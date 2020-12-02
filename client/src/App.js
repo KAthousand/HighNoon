@@ -1,14 +1,33 @@
 import "./App.css";
 import { Switch, Route, useHistory } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../src/components/shared/Layout/Layout";
 import Login from "./screens/Login/Login";
 import Register from "./screens/Register/Register";
-import { loginUser } from "./services/auth";
+import {
+  loginUser,
+  registerUser,
+  verifyUser,
+  removeToken,
+} from "./services/auth";
+import MainMenu from "./screens/MainMenu/MainMenu";
+import Instructions from "./screens/Instructions/Instructions";
+import ScoresContainer from "../src/containers/ScoresContainer/ScoresContainer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+      if (!userData) {
+        history.push("/");
+      }
+    };
+    handleVerify();
+  }, []);
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
@@ -16,17 +35,38 @@ function App() {
     history.push("/");
   };
 
+  const handleRegister = async (registerData) => {
+    const userData = await registerUser(registerData);
+    setCurrentUser(userData);
+    history.push("/");
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("authToken");
+    removeToken();
+    history.push("/");
+  };
+
   return (
     <div className="App">
-      <Layout>
+      <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route path="/login">
             <Login handleLogin={handleLogin} />
           </Route>
           <Route path="/register">
-            <Register />
+            <Register handleRegister={handleRegister} />
           </Route>
-          <Route path="/">{/* container */}</Route>
+          <Route exact path="/">
+            <MainMenu currentUser={currentUser} />
+          </Route>
+          <Route path="/instructions">
+            <Instructions />
+          </Route>
+          <Route path="/scores">
+            <ScoresContainer />
+          </Route>
         </Switch>
       </Layout>
     </div>

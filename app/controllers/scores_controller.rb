@@ -6,7 +6,9 @@ class ScoresController < ApplicationController
   def index
     @scores = Score.all
 
-    render json: @scores
+    # render json: @scores, include: [:user, :comments]
+    # render json: @scores, :include => {:comments => {:include => :user}}
+    render json: @scores, :include => [:user,{:comments => {:include => :user}}]
   end
 
   # GET /scores/1
