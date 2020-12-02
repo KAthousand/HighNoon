@@ -13,7 +13,7 @@ class ScoresController < ApplicationController
 
   # GET /scores/1
   def show
-    render json: @score, include: :user
+    render json: @score, include: [:user, :comments]
   end
 
   # POST /scores

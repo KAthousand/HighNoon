@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getAllScores } from "../../services/scores";
+import { getAllScores, getOneScore } from "../../services/scores";
 import Scores from "../../components/Scores/Scores";
 import { postComment, getAllComments } from "../../services/comments";
 
@@ -29,7 +29,11 @@ function ScoresContainer(props) {
   };
   return (
     <div>
-      <Scores allScores={allScores} createComment={createComment} />
+      <Scores
+        allScores={allScores}
+        allComments={allComments}
+        createComment={createComment}
+      />
     </div>
   );
 }

@@ -5,10 +5,10 @@ export const getAllScores = async () => {
   return resp.data;
 };
 
-// export const getOneScore = async (id) => {
-//   const resp = await api.get(`/scores/${id}`);
-//   return resp.data;
-// };
+export const getOneScore = async (id) => {
+  const resp = await api.get(`/scores/${id}`);
+  return resp.data;
+};
 
 export const postScore = async (scoreData) => {
   const resp = await api.post("/scores", { score: scoreData });

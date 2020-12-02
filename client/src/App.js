@@ -13,6 +13,7 @@ import {
 import MainMenu from "./screens/MainMenu/MainMenu";
 import Instructions from "./screens/Instructions/Instructions";
 import ScoresContainer from "../src/containers/ScoresContainer/ScoresContainer";
+import Game from "./screens/Game/Game";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -66,6 +67,9 @@ function App() {
           </Route>
           <Route path="/scores">
             <ScoresContainer />
+          </Route>
+          <Route path="/game">
+            <Game />
           </Route>
         </Switch>
       </Layout>

@@ -9,3 +9,7 @@
 .comments {
   border: 2px solid purple;
 }
+
+.comment {
+  border: 2px solid blue;
+}
