@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 function Timer(props) {
-  const { gameStart, setGameStart } = props;
-  const [timeLeft, setTimeLeft] = useState(10);
+  const { setGameStart } = props;
+  const [timeLeft, setTimeLeft] = useState(15);
   const history = useHistory();
 
   useEffect(() => {
@@ -17,17 +17,10 @@ function Timer(props) {
     };
   }, [timeLeft]);
 
-  // if (gameStart === false) {
-  //   <Redirect to={"/score-card"} />;
-  // }
-  // const timer = setInterval(() => {
-  //   setTimeLeft(timer - 1);
-  // }, 1000);
-
   return (
     <div className="timer">
-      <h4>{`0:${timeLeft}`}</h4>
-      {/* {gameStart === false && <Redirect to={"/score-card"} />} */}
+      {timeLeft > 9 ? <h4>{`0:${timeLeft}`}</h4> : <h4>{`0:0${timeLeft}`}</h4>}
+      {/* <h4>{timeLeft > 10 ? `0:${timeLeft}`}</h4> */}
     </div>
   );
 }

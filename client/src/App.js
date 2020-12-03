@@ -88,7 +88,6 @@ function App() {
             <Game
               wordCount={wordCount}
               setWordCount={setWordCount}
-              keyStrokes={keyStrokes}
               setKeyStrokes={setKeyStrokes}
               errorCount={errorCount}
               setErrorCount={setErrorCount}

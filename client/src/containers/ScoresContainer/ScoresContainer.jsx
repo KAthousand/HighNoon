@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { deleteScore, getAllScores } from "../../services/scores";
 import Score from "../../components/Score/Score";

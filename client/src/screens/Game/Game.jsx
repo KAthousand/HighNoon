@@ -31,7 +31,6 @@ function Game(props) {
   const {
     wordCount,
     setWordCount,
-    keyStrokes,
     setKeyStrokes,
     errorCount,
     setErrorCount,
@@ -92,7 +91,7 @@ function Game(props) {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
-          <Timer gameStart={gameStart} setGameStart={setGameStart} />
+          <Timer setGameStart={setGameStart} />
         </div>
       )}
     </div>

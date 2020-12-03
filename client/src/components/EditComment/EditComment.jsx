@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { getOneComment } from "../../services/comments";
+import React, { useState } from "react";
 
 function EditComment(props) {
   const { commentData, handleEditComment, setShowEdit } = props;

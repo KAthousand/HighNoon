@@ -48,7 +48,6 @@ function Score(props) {
         score.comments.map((comment) => (
           <Comment
             comment={comment}
-            scoreData={score}
             currentUser={currentUser}
             key={comment.id}
             handleEditComment={handleEditComment}
