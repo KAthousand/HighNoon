@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :comments, except: :update
+  resources :comments
   resources :scores
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'

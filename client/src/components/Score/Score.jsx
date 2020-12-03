@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import Comment from "../Comment/Comment";
 import CreateComment from "../CreateComment/CreateComment";
 import "./Score.css";
-import { deleteScore } from "../../services/scores";
+// import { deleteScore } from "../../services/scores";
 
 function Score(props) {
   const [showComments, setShowComments] = useState(false);
-  const { score, setIsSubmitting, currentUser } = props;
+  const {
+    score,
+    currentUser,
+    handleDelete,
+    handleDeleteComment,
+    handleCreateComment,
+    handleEditComment,
+  } = props;
 
   return (
     <React.Fragment>
@@ -23,9 +30,7 @@ function Score(props) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              setIsSubmitting(true);
-              deleteScore(score.id);
-              setIsSubmitting(false);
+              handleDelete(score.id);
             }}
           >
             Delete
@@ -36,15 +41,18 @@ function Score(props) {
         <CreateComment
           key={score.id}
           scoreData={score}
-          setIsSubmitting={setIsSubmitting}
+          handleCreateComment={handleCreateComment}
         />
       )}
       {showComments &&
         score.comments.map((comment) => (
           <Comment
             comment={comment}
+            scoreData={score}
             currentUser={currentUser}
             key={comment.id}
+            handleEditComment={handleEditComment}
+            handleDeleteComment={handleDeleteComment}
           />
         ))}
     </React.Fragment>

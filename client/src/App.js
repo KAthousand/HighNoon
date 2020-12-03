@@ -10,6 +10,7 @@ import {
   verifyUser,
   removeToken,
 } from "./services/auth";
+import { getAllScores } from "../src/services/scores";
 import MainMenu from "./screens/MainMenu/MainMenu";
 import Instructions from "./screens/Instructions/Instructions";
 import ScoresContainer from "../src/containers/ScoresContainer/ScoresContainer";
@@ -18,7 +19,7 @@ import PlayerScoreCard from "../src/screens/PlayerScoreCard/PlayerScoreCard";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [allScores, setAllScores] = useState([]);
   const [wordCount, setWordCount] = useState(0);
   const [errorCount, setErrorCount] = useState(0);
   const [keyStrokes, setKeyStrokes] = useState([]);
@@ -33,6 +34,7 @@ function App() {
       }
     };
     handleVerify();
+    fetchScores();
   }, []);
 
   const handleLogin = async (loginData) => {
@@ -54,6 +56,11 @@ function App() {
     history.push("/");
   };
 
+  const fetchScores = async () => {
+    const scores = await getAllScores();
+    setAllScores(scores);
+  };
+
   return (
     <div className="App">
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
@@ -73,8 +80,8 @@ function App() {
           <Route path="/scores">
             <ScoresContainer
               currentUser={currentUser}
-              isSubmitting={isSubmitting}
-              setIsSubmitting={setIsSubmitting}
+              allScores={allScores}
+              setAllScores={setAllScores}
             />
           </Route>
           <Route path="/game">
@@ -89,13 +96,13 @@ function App() {
           </Route>
           <Route path="/score-card">
             <PlayerScoreCard
+              setAllScores={setAllScores}
               wordCount={wordCount}
               setWordCount={setWordCount}
               keyStrokes={keyStrokes}
               setKeyStrokes={setKeyStrokes}
               errorCount={errorCount}
               setErrorCount={setErrorCount}
-              setIsSubmitting={setIsSubmitting}
             />
           </Route>
         </Switch>

@@ -1,20 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getAllScores } from "../../services/scores";
+import { deleteScore, getAllScores } from "../../services/scores";
 import Score from "../../components/Score/Score";
 import "./ScoresContainer.css";
+import {
+  postComment,
+  deleteComment,
+  putComment,
+} from "../../services/comments";
 
 function ScoresContainer(props) {
-  const [allScores, setAllScores] = useState([]);
-  const { isSubmitting, setIsSubmitting } = props;
+  const { allScores, setAllScores } = props;
 
-  useEffect(() => {
-    fetchScores();
-  }, [isSubmitting]);
+  const handleCreateComment = async (scoreData) => {
+    await postComment(scoreData);
+    const newScores = await getAllScores();
+    setAllScores(newScores);
+  };
 
-  const fetchScores = async () => {
-    const scores = await getAllScores();
-    setAllScores(scores);
+  const handleDeleteComment = async (id) => {
+    await deleteComment(id);
+    const newScores = await getAllScores();
+    setAllScores(newScores);
+  };
+
+  const handleEditComment = async (id, commentData) => {
+    await putComment(id, commentData);
+    const newScores = await getAllScores();
+    setAllScores(newScores);
+  };
+
+  const handleDelete = async (id) => {
+    await deleteScore(id);
+    setAllScores((prevState) => prevState.filter((score) => score.id !== id));
   };
 
   return (
@@ -23,9 +41,12 @@ function ScoresContainer(props) {
         {allScores.map((score) => (
           <Score
             score={score}
-            setIsSubmitting={setIsSubmitting}
             currentUser={props.currentUser}
             key={score.id}
+            handleDelete={handleDelete}
+            handleCreateComment={handleCreateComment}
+            handleDeleteComment={handleDeleteComment}
+            handleEditComment={handleEditComment}
           />
         ))}
       </div>

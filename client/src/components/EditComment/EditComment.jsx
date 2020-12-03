@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-// import { postComment } from "../../services/comments";
-import "./CreateComment.css";
+import React, { useState, useEffect } from "react";
+import { getOneComment } from "../../services/comments";
 
-function CreateComment(props) {
-  const { scoreData, handleCreateComment } = props;
+function EditComment(props) {
+  const { commentData, handleEditComment, setShowEdit } = props;
   const [formData, setFormData] = useState({
-    content: "",
-    score_id: String(scoreData.id),
+    content: commentData.content,
   });
 
   const handleChange = (e) => {
@@ -18,17 +16,13 @@ function CreateComment(props) {
   };
 
   return (
-    <div className="create-comment">
+    <div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           try {
-            handleCreateComment(formData);
-            setFormData((prevState) => ({
-              ...prevState,
-              content: "",
-              score_id: String(scoreData.id),
-            }));
+            handleEditComment(commentData.id, formData);
+            setShowEdit(false);
           } catch (error) {
             console.error(error);
           }
@@ -37,6 +31,7 @@ function CreateComment(props) {
         <label>
           <input
             type="text"
+            placeholder="Comment"
             name="content"
             value={formData.content}
             onChange={handleChange}
@@ -48,4 +43,4 @@ function CreateComment(props) {
   );
 }
 
-export default CreateComment;
+export default EditComment;
