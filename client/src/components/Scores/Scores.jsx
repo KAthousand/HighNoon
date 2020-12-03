@@ -4,22 +4,19 @@ import "./Scores.css";
 function Scores(props) {
   const { allScores, allComments, createComment } = props;
   const [shownComments, setShownComments] = useState({});
-  // const [showCreate, setShowCreate] = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
+  const [formData, setFormData] = useState({
+    content: "",
+  });
 
-  // const [formData, setFormData] = useState({
-  //   content: "",
-  //   score: "",
-  // });
-
-  // const { content } = formData;
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
+  const { content } = formData;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   const fetchOneScore = async (id) => {
     if (allScores.length) {
       // if allScores exists...
@@ -53,8 +50,28 @@ function Scores(props) {
             ) : (
               <button onClick={() => setShownComments({})}>Hide</button>
             )}
-            {shownComments[score.id] && <button>Add Comment</button>}
+            {shownComments[score.id] && <button onClick={}>Add Comment</button>}
           </div>
+          {showCreate && (
+            <div className="create-comment">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  createComment(formData);
+                }}
+              >
+                <label>
+                  <input
+                    type="text"
+                    name="content"
+                    value={content}
+                    onChange={handleChange}
+                  />
+                </label>
+                <button>Submit</button>
+              </form>
+            </div>
+          )}
           <div className={"comments"}>
             {shownComments[score.id] &&
               shownComments[score.id].map((comment) => (
@@ -68,29 +85,6 @@ function Scores(props) {
           </div>
         </React.Fragment>
       ))}
-
-      {/* <div className={showCreate ? "create-comment" : "hidden"}>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setFormData((prevState) => ({
-              ...prevState,
-              [score]: score.id,
-            }));
-            createComment(formData);
-          }}
-        >
-          <label>
-            <input
-              type="text"
-              name="content"
-              value={content}
-              onChange={handleChange}
-            />
-          </label>
-          <button>Submit</button>
-        </form>
-      </div> */}
     </div>
   );
 }

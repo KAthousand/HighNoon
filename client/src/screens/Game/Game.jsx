@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserInput from "../../components/UserInput/UserInput";
 import "./Game.css";
+import Timer from "../../components/Timer/Timer";
 
 const words = [
   "western",
@@ -24,6 +25,8 @@ function Game(props) {
   const [word, setWord] = useState("");
   const [error, setError] = useState(false);
   const [wordCount, setWordCount] = useState(0);
+  const [gameCountDown, setGameCountDown] = useState("Ready");
+  const [gameStart, setGameStart] = useState(false);
 
   const getRandomWord = () => {
     return words[Math.floor(Math.random() * words.length)];
@@ -31,6 +34,13 @@ function Game(props) {
 
   useEffect(() => {
     setWord(getRandomWord());
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => setGameCountDown("Set"), 1000);
+    setTimeout(() => setGameCountDown("Go!"), 2000);
+    setTimeout(() => setGameCountDown(""), 3000);
+    setTimeout(() => setGameStart(true), 3000);
   }, []);
 
   const handleChange = (e) => {
@@ -53,12 +63,20 @@ function Game(props) {
 
   return (
     <div>
-      <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
-      <UserInput
-        word={word}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
+      <div>
+        <h3>{gameCountDown}</h3>
+      </div>
+      {gameStart && (
+        <div>
+          <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
+          <UserInput
+            word={word}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+          />
+          <Timer gameStart={gameStart} setGameStart={setGameStart} />
+        </div>
+      )}
     </div>
   );
 }
