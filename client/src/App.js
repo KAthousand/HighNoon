@@ -23,6 +23,7 @@ function App() {
   const [wordCount, setWordCount] = useState(0);
   const [errorCount, setErrorCount] = useState(0);
   const [keyStrokes, setKeyStrokes] = useState([]);
+  // const [fake, setFake] = useState(true);
   const history = useHistory();
 
   useEffect(() => {

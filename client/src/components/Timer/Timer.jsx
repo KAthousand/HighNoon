@@ -20,7 +20,6 @@ function Timer(props) {
   return (
     <div className="timer">
       {timeLeft > 9 ? <h4>{`0:${timeLeft}`}</h4> : <h4>{`0:0${timeLeft}`}</h4>}
-      {/* <h4>{timeLeft > 10 ? `0:${timeLeft}`}</h4> */}
     </div>
   );
 }
