@@ -42,7 +42,7 @@ function PlayerScoreCard(props) {
           postScore({
             score: String(result),
           });
-          setIsSubmitting(true);
+          // setIsSubmitting(true);
           resetGame();
           history.push("/scores");
         }}

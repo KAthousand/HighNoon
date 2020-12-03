@@ -6,7 +6,7 @@ import { deleteScore } from "../../services/scores";
 
 function Score(props) {
   const [showComments, setShowComments] = useState(false);
-  const { score, setIsSubmitting, currentUser } = props;
+  const { score, isSubmitting, setIsSubmitting, currentUser } = props;
 
   return (
     <React.Fragment>
@@ -24,7 +24,7 @@ function Score(props) {
             onClick={(e) => {
               e.preventDefault();
               deleteScore(score.id);
-              setIsSubmitting(true);
+              setIsSubmitting(!isSubmitting);
             }}
           >
             Delete
@@ -35,6 +35,7 @@ function Score(props) {
         <CreateComment
           key={score.id}
           scoreData={score}
+          isSubmitting={isSubmitting}
           setIsSubmitting={setIsSubmitting}
         />
       )}
@@ -42,8 +43,11 @@ function Score(props) {
         score.comments.map((comment) => (
           <Comment
             comment={comment}
+            scoreData={score}
             currentUser={currentUser}
             key={comment.id}
+            isSubmitting={isSubmitting}
+            setIsSubmitting={setIsSubmitting}
           />
         ))}
     </React.Fragment>
