@@ -14,9 +14,13 @@ import MainMenu from "./screens/MainMenu/MainMenu";
 import Instructions from "./screens/Instructions/Instructions";
 import ScoresContainer from "../src/containers/ScoresContainer/ScoresContainer";
 import Game from "./screens/Game/Game";
+import PlayerScoreCard from "../src/screens/PlayerScoreCard/PlayerScoreCard";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [wordCount, setWordCount] = useState(0);
+  const [errorCount, setErrorCount] = useState(0);
+  const [keyStrokes, setKeyStrokes] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -66,10 +70,27 @@ function App() {
             <Instructions />
           </Route>
           <Route path="/scores">
-            <ScoresContainer />
+            <ScoresContainer currentUser={currentUser} />
           </Route>
           <Route path="/game">
-            <Game />
+            <Game
+              wordCount={wordCount}
+              setWordCount={setWordCount}
+              keyStrokes={keyStrokes}
+              setKeyStrokes={setKeyStrokes}
+              errorCount={errorCount}
+              setErrorCount={setErrorCount}
+            />
+          </Route>
+          <Route path="/score-card">
+            <PlayerScoreCard
+              wordCount={wordCount}
+              setWordCount={setWordCount}
+              keyStrokes={keyStrokes}
+              setKeyStrokes={setKeyStrokes}
+              errorCount={errorCount}
+              setErrorCount={setErrorCount}
+            />
           </Route>
         </Switch>
       </Layout>

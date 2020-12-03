@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import PlayerScoreCard from "../PlayerScoreCard/PlayerScoreCard";
 import UserInput from "../../components/UserInput/UserInput";
 import "./Game.css";
 import Timer from "../../components/Timer/Timer";
@@ -24,9 +25,16 @@ const words = [
 function Game(props) {
   const [word, setWord] = useState("");
   const [error, setError] = useState(false);
-  const [wordCount, setWordCount] = useState(0);
   const [gameCountDown, setGameCountDown] = useState("Ready");
   const [gameStart, setGameStart] = useState(false);
+  const {
+    wordCount,
+    setWordCount,
+    keyStrokes,
+    setKeyStrokes,
+    errorCount,
+    setErrorCount,
+  } = props;
 
   const getRandomWord = () => {
     return words[Math.floor(Math.random() * words.length)];
@@ -34,6 +42,9 @@ function Game(props) {
 
   useEffect(() => {
     setWord(getRandomWord());
+    if (error === true) {
+      setErrorCount(errorCount + 1);
+    }
   }, []);
 
   useEffect(() => {
@@ -47,7 +58,7 @@ function Game(props) {
     const wordArray = word.split("");
     const userInput = e.target.value;
     const userInputArray = userInput.split("");
-    console.log(userInputArray);
+    // console.log(userInputArray);
     const result = userInputArray.reduce((result, letter, idx) => {
       // console.log(letter);
       if (wordArray[idx] !== letter) {
@@ -56,7 +67,12 @@ function Game(props) {
     }, false);
     setError(result);
   };
+
+  let keys;
+
   const handleSubmit = () => {
+    keys += word;
+    setKeyStrokes(keys.split(""));
     setWord(getRandomWord());
     setWordCount(wordCount + 1);
   };

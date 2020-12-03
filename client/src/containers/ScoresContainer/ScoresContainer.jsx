@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { getAllScores, getOneScore } from "../../services/scores";
-import Scores from "../../components/Scores/Scores";
-import { postComment, getAllComments } from "../../services/comments";
+import { Link } from "react-router-dom";
+import { getAllScores } from "../../services/scores";
+import Score from "../../components/Score/Score";
+import "./ScoresContainer.css";
 
 function ScoresContainer(props) {
   const [allScores, setAllScores] = useState([]);
-  const [allComments, setAllComments] = useState([]);
-  // const history = useHistory();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     fetchScores();
-    fetchComments();
   }, []);
 
   const fetchScores = async () => {
@@ -18,22 +17,21 @@ function ScoresContainer(props) {
     setAllScores(scores);
   };
 
-  const fetchComments = async () => {
-    const comments = await getAllComments();
-    setAllComments(comments);
-  };
-
-  const createComment = async (commentData) => {
-    const newComment = await postComment(commentData);
-    setAllComments((prevState) => [...prevState, newComment]);
-  };
   return (
     <div>
-      <Scores
-        allScores={allScores}
-        allComments={allComments}
-        createComment={createComment}
-      />
+      <div className="scoreboard-container">
+        {allScores.map((score) => (
+          <Score
+            score={score}
+            setIsSubmitting={setIsSubmitting}
+            currentUser={props.currentUser}
+            key={score.id}
+          />
+        ))}
+      </div>
+      <Link to="/">
+        <button>Back</button>
+      </Link>
     </div>
   );
 }

@@ -17,6 +17,7 @@ export const postScore = async (scoreData) => {
 
 // export const putScore = async (id, scoreData) => {
 //   const resp = await api.put(`/scores/${id}`, {score: scoreData})
+//   return resp.data
 // }
 
 export const deleteScore = async (id) => {

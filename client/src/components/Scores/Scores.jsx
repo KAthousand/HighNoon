@@ -50,7 +50,7 @@ function Scores(props) {
             ) : (
               <button onClick={() => setShownComments({})}>Hide</button>
             )}
-            {shownComments[score.id] && <button onClick={}>Add Comment</button>}
+            {shownComments[score.id] && <button>Add Comment</button>}
           </div>
           {showCreate && (
             <div className="create-comment">
