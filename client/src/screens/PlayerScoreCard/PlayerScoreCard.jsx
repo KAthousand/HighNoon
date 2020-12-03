@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { postScore } from "../../services/scores";
+import { postScore, getAllScores } from "../../services/scores";
 
 function PlayerScoreCard(props) {
   const {
@@ -10,15 +10,20 @@ function PlayerScoreCard(props) {
     setKeyStrokes,
     errorCount,
     setErrorCount,
-    setIsSubmitting,
+    setAllScores,
   } = props;
   const history = useHistory();
   const resetGame = (keys) => {
     setWordCount(0);
     setErrorCount(0);
     setKeyStrokes([]);
-    setIsSubmitting(false);
     keys = 0;
+  };
+
+  const handleCreate = async (scoreData) => {
+    await postScore(scoreData);
+    const newScores = await getAllScores();
+    setAllScores(newScores);
   };
 
   let keys;
@@ -39,10 +44,9 @@ function PlayerScoreCard(props) {
       <button
         onClick={(e) => {
           e.preventDefault();
-          postScore({
+          handleCreate({
             score: String(result),
           });
-          // setIsSubmitting(true);
           resetGame();
           history.push("/scores");
         }}

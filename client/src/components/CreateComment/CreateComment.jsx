@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { postComment } from "../../services/comments";
+// import { postComment } from "../../services/comments";
 import "./CreateComment.css";
 
 function CreateComment(props) {
-  const { scoreData, isSubmitting, setIsSubmitting } = props;
+  const { scoreData, handleCreateComment } = props;
   const [formData, setFormData] = useState({
     content: "",
     score_id: String(scoreData.id),
@@ -23,12 +23,15 @@ function CreateComment(props) {
         onSubmit={(e) => {
           e.preventDefault();
           try {
-            postComment(formData);
-            setIsSubmitting(!isSubmitting);
+            handleCreateComment(formData);
+            setFormData((prevState) => ({
+              ...prevState,
+              content: "",
+              score_id: String(scoreData.id),
+            }));
           } catch (error) {
             console.error(error);
           }
-          setIsSubmitting(!isSubmitting);
         }}
       >
         <label>

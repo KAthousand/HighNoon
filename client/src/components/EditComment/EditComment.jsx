@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { putComment } from "../../services/comments";
+import React, { useState, useEffect } from "react";
+import { getOneComment } from "../../services/comments";
 
 function EditComment(props) {
-  const { scoreData, commentData, isSubmitting, setIsSubmitting } = props;
+  const { commentData, handleEditComment, setShowEdit } = props;
   const [formData, setFormData] = useState({
-    content: "",
-    // score_id: String(scoreData.id),
+    content: commentData.content,
   });
 
   const handleChange = (e) => {
@@ -16,21 +15,17 @@ function EditComment(props) {
     }));
   };
 
-  const handleUpdate = async (id, formData) => {
-    await putComment(id, formData);
-  };
   return (
     <div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           try {
-            handleUpdate(commentData.id, formData);
-            setIsSubmitting(!isSubmitting);
+            handleEditComment(commentData.id, formData);
+            setShowEdit(false);
           } catch (error) {
             console.error(error);
           }
-          setIsSubmitting(!isSubmitting);
         }}
       >
         <label>
