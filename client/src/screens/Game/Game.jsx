@@ -92,7 +92,7 @@ function Game(props) {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
-          <Timer gameStart={gameStart} setGameStart={setGameStart} />
+          <Timer setGameStart={setGameStart} />
         </div>
       )}
     </div>

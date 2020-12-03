@@ -17,6 +17,7 @@ function PlayerScoreCard(props) {
     setWordCount(0);
     setErrorCount(0);
     setKeyStrokes([]);
+    setIsSubmitting(false);
     keys = 0;
   };
 
@@ -38,11 +39,11 @@ function PlayerScoreCard(props) {
       <button
         onClick={(e) => {
           e.preventDefault();
-          setIsSubmitting(true);
+          debugger;
           postScore({
             score: String(result),
           });
-          setIsSubmitting(false);
+          setIsSubmitting(true);
           resetGame();
           history.push("/scores");
         }}

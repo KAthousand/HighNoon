@@ -6,7 +6,7 @@ function CreateComment(props) {
   const { scoreData, setIsSubmitting } = props;
   const [formData, setFormData] = useState({
     content: "",
-    score: [scoreData.id],
+    score_id: String(scoreData.id),
   });
 
   const handleChange = (e) => {

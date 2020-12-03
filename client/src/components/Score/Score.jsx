@@ -23,9 +23,8 @@ function Score(props) {
           <button
             onClick={(e) => {
               e.preventDefault();
-              setIsSubmitting(true);
               deleteScore(score.id);
-              setIsSubmitting(false);
+              setIsSubmitting(true);
             }}
           >
             Delete
