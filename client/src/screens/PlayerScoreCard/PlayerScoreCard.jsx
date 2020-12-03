@@ -39,7 +39,6 @@ function PlayerScoreCard(props) {
       <button
         onClick={(e) => {
           e.preventDefault();
-          debugger;
           postScore({
             score: String(result),
           });
