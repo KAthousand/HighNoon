@@ -21,6 +21,7 @@ const words = [
   "bandit",
   "tumbleweed",
 ];
+let keys = [];
 
 function Game(props) {
   const [word, setWord] = useState("");
@@ -42,10 +43,13 @@ function Game(props) {
 
   useEffect(() => {
     setWord(getRandomWord());
-    if (error === true) {
+  }, []);
+
+  useEffect(() => {
+    if (error) {
       setErrorCount(errorCount + 1);
     }
-  }, []);
+  }, [error]);
 
   useEffect(() => {
     setTimeout(() => setGameCountDown("Set"), 1000);
@@ -68,11 +72,9 @@ function Game(props) {
     setError(result);
   };
 
-  let keys;
-
   const handleSubmit = () => {
-    keys += word;
-    setKeyStrokes(keys.split(""));
+    keys.push(word.length);
+    setKeyStrokes(keys);
     setWord(getRandomWord());
     setWordCount(wordCount + 1);
   };

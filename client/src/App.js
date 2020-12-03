@@ -18,6 +18,7 @@ import PlayerScoreCard from "../src/screens/PlayerScoreCard/PlayerScoreCard";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const [errorCount, setErrorCount] = useState(0);
   const [keyStrokes, setKeyStrokes] = useState([]);
@@ -70,7 +71,11 @@ function App() {
             <Instructions />
           </Route>
           <Route path="/scores">
-            <ScoresContainer currentUser={currentUser} />
+            <ScoresContainer
+              currentUser={currentUser}
+              isSubmitting={isSubmitting}
+              setIsSubmitting={setIsSubmitting}
+            />
           </Route>
           <Route path="/game">
             <Game
@@ -90,6 +95,7 @@ function App() {
               setKeyStrokes={setKeyStrokes}
               errorCount={errorCount}
               setErrorCount={setErrorCount}
+              setIsSubmitting={setIsSubmitting}
             />
           </Route>
         </Switch>

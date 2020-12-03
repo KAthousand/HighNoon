@@ -6,11 +6,11 @@ import "./ScoresContainer.css";
 
 function ScoresContainer(props) {
   const [allScores, setAllScores] = useState([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { isSubmitting, setIsSubmitting } = props;
 
   useEffect(() => {
     fetchScores();
-  }, []);
+  }, [isSubmitting]);
 
   const fetchScores = async () => {
     const scores = await getAllScores();

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function Timer(props) {
   const { setGameStart } = props;
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(59);
   const history = useHistory();
 
   useEffect(() => {
