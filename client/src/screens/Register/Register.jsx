@@ -17,14 +17,15 @@ function Register(props) {
   };
 
   return (
-    <div>
+    <div className="container">
+      <h3>Register</h3>
       <form
+        className="form-container"
         onSubmit={(e) => {
           e.preventDefault();
           props.handleRegister(formData);
         }}
       >
-        <h3>Register</h3>
         <label>
           Username:
           <input

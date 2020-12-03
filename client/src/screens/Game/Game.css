@@ -1,3 +1,25 @@
 .incorrect {
   color: red;
 }
+.game-container {
+  border: 2px solid yellowgreen;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.game-countdown {
+  border: 2px solid blue;
+}
+
+.word-container {
+  border: 2px solid green;
+}
+
+.user-container {
+  border: 2px solid purple;
+  display: flex;
+  align-items: center;
+}

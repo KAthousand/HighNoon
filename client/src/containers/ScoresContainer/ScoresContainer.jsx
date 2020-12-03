@@ -36,8 +36,8 @@ function ScoresContainer(props) {
   };
 
   return (
-    <div>
-      <div className="scoreboard-container">
+    <div className="container">
+      <div>
         {allScores.map((score) => (
           <Score
             score={score}

@@ -2,6 +2,16 @@
   border: 2px solid green;
   height: 5vh;
   width: 100%;
+  padding: 1% 5%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.header-user-info {
+  border: 2px solid orange;
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

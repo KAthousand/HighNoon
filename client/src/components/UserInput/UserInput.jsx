@@ -18,7 +18,7 @@ function UserInput(props) {
     }
   };
   return (
-    <div>
+    <div className="user-input-container">
       <input
         type="text"
         onKeyDown={onKeyDown}

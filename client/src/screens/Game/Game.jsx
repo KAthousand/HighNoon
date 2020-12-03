@@ -79,20 +79,26 @@ function Game(props) {
   };
 
   return (
-    <div>
+    <div className="game-container">
       <div>
-        <h3>{gameCountDown}</h3>
+        <h3 className={gameStart ? "hidden" : "game-countdown"}>
+          {gameCountDown}
+        </h3>
       </div>
       {gameStart && (
-        <div>
-          <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
-          <UserInput
-            word={word}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-          <Timer setGameStart={setGameStart} />
-        </div>
+        <>
+          <div className="word-container">
+            <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
+          </div>
+          <div className="user-container">
+            <UserInput
+              word={word}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+            />
+            <Timer setGameStart={setGameStart} />
+          </div>
+        </>
       )}
     </div>
   );

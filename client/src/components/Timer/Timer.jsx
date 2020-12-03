@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import "./Timer.css";
 
 function Timer(props) {
   const { setGameStart } = props;
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [timeLeft, setTimeLeft] = useState(200);
   const history = useHistory();
 
   useEffect(() => {
@@ -18,8 +19,12 @@ function Timer(props) {
   }, [timeLeft]);
 
   return (
-    <div className="timer">
-      {timeLeft > 9 ? <h4>{`0:${timeLeft}`}</h4> : <h4>{`0:0${timeLeft}`}</h4>}
+    <div className="timer-container">
+      {timeLeft > 9 ? (
+        <h4>{`0:${timeLeft}`}</h4>
+      ) : (
+        <h4 className="timer-low">{`0:0${timeLeft}`}</h4>
+      )}
     </div>
   );
 }

@@ -9,8 +9,34 @@ h5,
 h6,
 p {
   margin: 0;
+  font-family: "Press Start 2P", cursive;
+}
+
+form {
+  font-family: "Press Start 2P", cursive;
+}
+
+button {
+  font-family: "Press Start 2P", cursive;
+  background: none;
 }
 
 .hidden {
   display: none;
+}
+
+.container {
+  border: 2px solid red;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
 }
