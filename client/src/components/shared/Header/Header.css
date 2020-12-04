@@ -1,15 +1,18 @@
 .header {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   height: 5vh;
   width: 100%;
   padding: 1% 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(213, 193, 114);
+  color: rgb(191, 152, 91);
 }
 
 .header-user-info {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
+  color: white;
   width: 20%;
   display: flex;
   justify-content: space-evenly;

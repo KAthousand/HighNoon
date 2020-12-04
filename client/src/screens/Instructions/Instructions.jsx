@@ -5,6 +5,9 @@ import "./Instructions.css";
 function Instructions(props) {
   return (
     <div className="container">
+      <div className="logo">
+        <h1>High Noon</h1>
+      </div>
       <div className="instructions-container">
         <h1>How to Play:</h1>
         {/* <p>Type the words as they appear.</p>

@@ -1,3 +1,21 @@
 .comment {
-  border: 2px solid yellow;
+  border-bottom: 5px solid rgb(207, 192, 118);
+  background-color: rgb(170, 107, 72);
+  padding: 5px;
+}
+
+.comment h4 {
+  margin: 5px 0;
+}
+
+.comment-button-container {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-button-container button {
+  border: none;
+  margin: 2px 5px;
+  color: rgb(207, 192, 118);
 }

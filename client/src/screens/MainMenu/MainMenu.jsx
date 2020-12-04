@@ -7,6 +7,9 @@ function MainMenu(props) {
   const { currentUser } = props;
   return (
     <div className="container">
+      <div className="logo">
+        <h1>High Noon</h1>
+      </div>
       {currentUser ? (
         <div className="button-container">
           <Link to="/instructions">

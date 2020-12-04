@@ -1,0 +1,19 @@
+.button-container {
+  /* border: 2px solid red; */
+  width: 100%;
+}
+
+.button-container a button {
+  background-color: rgb(170, 107, 72);
+  color: rgb(245, 245, 226);
+
+  padding: 30px;
+}
+
+.button-container a {
+  /* border: 2px solid blue; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}

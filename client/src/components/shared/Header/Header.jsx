@@ -10,7 +10,9 @@ function Header(props) {
       {currentUser ? (
         <div className="header-user-info">
           <p>{currentUser.username}</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout} className="scoreboard-button">
+            Logout
+          </button>
         </div>
       ) : (
         <Link to="login">Login</Link>
