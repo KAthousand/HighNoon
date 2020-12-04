@@ -8,7 +8,7 @@ const baseUrl =
 // put a ternary for production
 
 const api = axios.create({
-  baseURL: baseURL,
+  baseURL: baseUrl,
 });
 
 export default api;
