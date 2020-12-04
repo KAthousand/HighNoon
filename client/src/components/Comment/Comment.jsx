@@ -6,7 +6,6 @@ import EditComment from "../EditComment/EditComment";
 function Comment(props) {
   const [showEdit, setShowEdit] = useState(false);
   const {
-    scoreData,
     comment,
     currentUser,
     handleEditComment,

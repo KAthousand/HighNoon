@@ -4,7 +4,7 @@ class ScoresController < ApplicationController
 
   # GET /scores
   def index
-    @scores = Score.all
+    @scores = Score.all.order(score: :desc)
 
     # render json: @scores, include: [:user, :comments]
     # render json: @scores, :include => {:comments => {:include => :user}}

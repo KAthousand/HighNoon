@@ -1,5 +1,7 @@
 .layout-children {
-  border: 2px solid blue;
+  border: 2px solid yellow;
+  background: url("../../../assets/background1.png") center center no-repeat;
+  background-size: cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,9 +11,101 @@
 
 .layout-children-add-header {
   border: 2px solid blue;
+  background: url("../../../assets/background1.png") center center no-repeat;
+  background-size: cover;
   height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 3;
+}
+
+.layout-background {
+  border: 2px solid green;
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.building {
+  border: 2px solid yellow;
+  position: absolute;
+  height: 95vh;
+  width: 100%;
+  background: url("../../../assets/wholebuilding1.png") center center no-repeat;
+  background-size: 1800px;
+  z-index: 2;
+}
+
+.outlaw-container {
+  /* border: 2px solid yellow; */
+  background: url("../../../assets/Cowboy.png") center center no-repeat;
+  background-size: 300px;
+  height: 30%;
+  width: 10%;
+  position: absolute;
+  /* top: 60%; */
+  top: 620px;
+  left: 0%;
+  visibility: hidden;
+  transition: visibility 0.25s, left 0.4s, transform 0.4s;
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+  z-index: 1;
+}
+.one-transition {
+  visibility: visible;
+  /* left: 72%; */
+  left: 1380px;
+  transform: rotate(30deg);
+}
+
+.outlaw-container-two {
+  /* border: 2px solid yellow; */
+  background: url("../../../assets/Cowboy2.png") center center no-repeat;
+  background-size: 300px;
+  height: 30%;
+  width: 10%;
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  visibility: hidden;
+  transition: visibility 0.25s, left 0.4s, transform 0.4s;
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+  z-index: 1;
+}
+
+.two-transition {
+  visibility: visible;
+  left: 18%;
+  transform: rotate(-30deg);
+}
+
+.dramatic-top {
+  height: 0;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 0vh;
+  z-index: 7;
+  transition: height 2s;
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+.dramatic-bottom {
+  height: 0;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  bottom: 0vh;
+  z-index: 7;
+  transition: height 2s;
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+.drama-transition {
+  height: 10vh;
 }

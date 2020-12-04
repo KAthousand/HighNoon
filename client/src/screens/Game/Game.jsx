@@ -27,14 +27,18 @@ function Game(props) {
   const [word, setWord] = useState("");
   const [error, setError] = useState(false);
   const [gameCountDown, setGameCountDown] = useState("Ready");
-  const [gameStart, setGameStart] = useState(false);
+
   const {
     wordCount,
     setWordCount,
-    keyStrokes,
     setKeyStrokes,
     errorCount,
     setErrorCount,
+    outlaw,
+    setOutlaw,
+    gameStart,
+    setGameStart,
+    setCountdownTrigger,
   } = props;
 
   const getRandomWord = () => {
@@ -46,30 +50,26 @@ function Game(props) {
   }, []);
 
   useEffect(() => {
-    if (error) {
-      setErrorCount(errorCount + 1);
-    }
-  }, [error]);
-
-  useEffect(() => {
+    setCountdownTrigger(true);
     setTimeout(() => setGameCountDown("Set"), 1000);
     setTimeout(() => setGameCountDown("Go!"), 2000);
     setTimeout(() => setGameCountDown(""), 3000);
     setTimeout(() => setGameStart(true), 3000);
-  }, []);
+  }, [setCountdownTrigger, setGameStart]);
 
   const handleChange = (e) => {
     const wordArray = word.split("");
     const userInput = e.target.value;
     const userInputArray = userInput.split("");
-    // console.log(userInputArray);
     const result = userInputArray.reduce((result, letter, idx) => {
-      // console.log(letter);
       if (wordArray[idx] !== letter) {
-        return true;
+        result = true;
+        return result;
       }
+      return false;
     }, false);
     setError(result);
+    result && setErrorCount(errorCount + 1);
   };
 
   const handleSubmit = () => {
@@ -77,23 +77,31 @@ function Game(props) {
     setKeyStrokes(keys);
     setWord(getRandomWord());
     setWordCount(wordCount + 1);
+    setOutlaw(!outlaw);
   };
 
   return (
-    <div>
-      <div>
-        <h3>{gameCountDown}</h3>
+    <div className="game-container">
+      <div className={gameStart ? "hidden" : "game-countdown"}>
+        <h1>{gameCountDown}</h1>
       </div>
       {gameStart && (
-        <div>
-          <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
-          <UserInput
-            word={word}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-          <Timer gameStart={gameStart} setGameStart={setGameStart} />
-        </div>
+        <>
+          <div className={outlaw ? "word-container" : "word-container-two"}>
+            <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
+          </div>
+          <div className="user-container">
+            <UserInput
+              word={word}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+            />
+            <Timer
+              setGameStart={setGameStart}
+              setCountdownTrigger={setCountdownTrigger}
+            />
+          </div>
+        </>
       )}
     </div>
   );

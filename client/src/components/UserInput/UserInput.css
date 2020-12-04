@@ -1,0 +1,10 @@
+.user-input-container {
+  border: 5px solid black;
+}
+
+.user-input-container input {
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 2px;
+  font-size: 1.5em;
+  padding: 10px;
+}

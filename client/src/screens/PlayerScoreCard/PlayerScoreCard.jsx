@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { postScore, getAllScores } from "../../services/scores";
+import "./PlayerScoreCard.css";
 
 function PlayerScoreCard(props) {
   const {
@@ -33,26 +34,28 @@ function PlayerScoreCard(props) {
   const result = Math.floor(keys / 5 + wordCount - errorCount);
 
   return (
-    <div>
+    <div className="container">
       <h4>Avg. Words Per Minute....{Math.floor(keys / 5)}</h4>
       <h4>Total Error Count....{String(errorCount)}</h4>
       <h4>Total Word Count.....{String(wordCount)}</h4>
       <h2> Total Points....{String(result)}</h2>
-      <Link to="/">
-        <button onClick={() => resetGame(keys)}>Main Menu</button>
-      </Link>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          handleCreate({
-            score: String(result),
-          });
-          resetGame();
-          history.push("/scores");
-        }}
-      >
-        Submit Score
-      </button>
+      <div className="score-card-button-container">
+        <Link to="/">
+          <button onClick={() => resetGame(keys)}>Main Menu</button>
+        </Link>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleCreate({
+              score: String(result),
+            });
+            resetGame();
+            history.push("/scores");
+          }}
+        >
+          Submit Score
+        </button>
+      </div>
     </div>
   );
 }
