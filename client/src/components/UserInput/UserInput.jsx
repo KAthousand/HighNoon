@@ -24,6 +24,7 @@ function UserInput(props) {
         onKeyDown={onKeyDown}
         onChange={onChange}
         value={value}
+        autoFocus
       />
     </div>
   );

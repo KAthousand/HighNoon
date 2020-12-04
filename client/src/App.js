@@ -23,7 +23,9 @@ function App() {
   const [wordCount, setWordCount] = useState(0);
   const [errorCount, setErrorCount] = useState(0);
   const [keyStrokes, setKeyStrokes] = useState([]);
-  // const [fake, setFake] = useState(true);
+  const [gameStart, setGameStart] = useState(false);
+  const [countdownTrigger, setCountdownTrigger] = useState(false);
+  const [outlaw, setOutlaw] = useState(true);
   const history = useHistory();
 
   useEffect(() => {
@@ -64,7 +66,14 @@ function App() {
 
   return (
     <div className="App">
-      <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Layout
+        currentUser={currentUser}
+        handleLogout={handleLogout}
+        outlaw={outlaw}
+        setOutlaw={setOutlaw}
+        gameStart={gameStart}
+        countdownTrigger={countdownTrigger}
+      >
         <Switch>
           <Route path="/login">
             <Login handleLogin={handleLogin} />
@@ -92,6 +101,11 @@ function App() {
               setKeyStrokes={setKeyStrokes}
               errorCount={errorCount}
               setErrorCount={setErrorCount}
+              outlaw={outlaw}
+              setOutlaw={setOutlaw}
+              gameStart={gameStart}
+              setGameStart={setGameStart}
+              setCountdownTrigger={setCountdownTrigger}
             />
           </Route>
           <Route path="/score-card">

@@ -4,6 +4,8 @@ import Header from "../Header/Header";
 import "./Layout.css";
 
 function Layout(props) {
+  const { outlaw, gameStart, countdownTrigger } = props;
+
   return (
     <div className="layout">
       {props.currentUser && (
@@ -18,6 +20,27 @@ function Layout(props) {
         }
       >
         <div className="layout-background">{props.children}</div>
+        <div
+          className={
+            countdownTrigger ? "dramatic-top drama-transition" : "dramatic-top"
+          }
+        ></div>
+        {gameStart && (
+          <div
+            className={
+              outlaw
+                ? "outlaw-container one-transition"
+                : "outlaw-container-two two-transition"
+            }
+          ></div>
+        )}
+        <div
+          className={
+            countdownTrigger
+              ? "dramatic-bottom drama-transition"
+              : "dramatic-bottom"
+          }
+        ></div>
       </div>
     </div>
   );
