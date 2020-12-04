@@ -20,6 +20,7 @@ function Layout(props) {
         }
       >
         <div className="layout-background">{props.children}</div>
+        <div className="building"></div>
         <div
           className={
             countdownTrigger ? "dramatic-top drama-transition" : "dramatic-top"

@@ -7,4 +7,5 @@
   font-size: 1.5em;
   padding: 12px;
   background-color: grey;
+  z-index: 6;
 }
