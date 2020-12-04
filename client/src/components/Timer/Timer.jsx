@@ -4,6 +4,7 @@ import "./Timer.css";
 
 function Timer(props) {
   const { setGameStart, setCountdownTrigger } = props;
+
   const [timeLeft, setTimeLeft] = useState(59);
   const history = useHistory();
 
