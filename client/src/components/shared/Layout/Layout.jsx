@@ -17,7 +17,7 @@ function Layout(props) {
           props.currentUser ? "layout-children-add-header" : "layout-children"
         }
       >
-        {props.children}
+        <div className="layout-background">{props.children}</div>
       </div>
     </div>
   );

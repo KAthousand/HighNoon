@@ -36,7 +36,7 @@ function App() {
     };
     handleVerify();
     fetchScores();
-  }, []);
+  }, [history]);
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);

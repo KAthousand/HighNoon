@@ -45,12 +45,6 @@ function Game(props) {
   }, []);
 
   useEffect(() => {
-    if (error) {
-      setErrorCount(errorCount + 1);
-    }
-  }, [error]);
-
-  useEffect(() => {
     setTimeout(() => setGameCountDown("Set"), 1000);
     setTimeout(() => setGameCountDown("Go!"), 2000);
     setTimeout(() => setGameCountDown(""), 3000);
@@ -65,10 +59,13 @@ function Game(props) {
     const result = userInputArray.reduce((result, letter, idx) => {
       // console.log(letter);
       if (wordArray[idx] !== letter) {
-        return true;
+        result = true;
+        return result;
       }
+      return false;
     }, false);
     setError(result);
+    result && setErrorCount(errorCount + 1);
   };
 
   const handleSubmit = () => {

@@ -4,7 +4,7 @@ import "./Timer.css";
 
 function Timer(props) {
   const { setGameStart } = props;
-  const [timeLeft, setTimeLeft] = useState(200);
+  const [timeLeft, setTimeLeft] = useState(10);
   const history = useHistory();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Timer(props) {
     return () => {
       clearTimeout(timer);
     };
-  }, [timeLeft]);
+  }, [timeLeft, history, setGameStart]);
 
   return (
     <div className="timer-container">

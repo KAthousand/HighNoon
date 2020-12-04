@@ -1,5 +1,7 @@
 .layout-children {
   border: 2px solid yellow;
+  background: url("../../../assets/background1.png") center center no-repeat;
+  background-size: cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,7 +11,21 @@
 
 .layout-children-add-header {
   border: 2px solid blue;
+  background: url("../../../assets/background1.png") center center no-repeat;
+  background-size: cover;
   height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-background {
+  border: 2px solid green;
+  background: url("../../../assets/wholebuilding1.png") center center no-repeat;
+  background-size: 75%;
+  height: 95vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
