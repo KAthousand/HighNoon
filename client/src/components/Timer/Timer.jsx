@@ -4,7 +4,7 @@ import "./Timer.css";
 
 function Timer(props) {
   const { setGameStart } = props;
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(10000);
   const history = useHistory();
 
   useEffect(() => {

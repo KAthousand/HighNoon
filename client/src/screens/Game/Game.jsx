@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import UserInput from "../../components/UserInput/UserInput";
 import "./Game.css";
 import Timer from "../../components/Timer/Timer";
+import outlaw from "../../assets/Cowboy.png";
 
 const words = [
   "western",
@@ -28,6 +29,7 @@ function Game(props) {
   const [error, setError] = useState(false);
   const [gameCountDown, setGameCountDown] = useState("Ready");
   const [gameStart, setGameStart] = useState(false);
+  const [outlaw, setOutlaw] = useState(true);
   const {
     wordCount,
     setWordCount,
@@ -73,6 +75,7 @@ function Game(props) {
     setKeyStrokes(keys);
     setWord(getRandomWord());
     setWordCount(wordCount + 1);
+    setOutlaw(!outlaw);
   };
 
   return (
@@ -84,8 +87,9 @@ function Game(props) {
       </div>
       {gameStart && (
         <>
-          <div className="word-container">
+          <div className={outlaw ? "word-container" : "word-container-two"}>
             <h1 className={error ? "incorrect" : "correct"}>{word}</h1>
+            <div className="outlaw-container"></div>
           </div>
           <div className="user-container">
             <UserInput
