@@ -29,6 +29,7 @@ function Login(props) {
         >
           <label>
             Username:
+            <br />
             <input
               type="text"
               name="username"
@@ -38,6 +39,7 @@ function Login(props) {
           </label>
           <label>
             Password:
+            <br />
             <input
               type="text"
               name="password"

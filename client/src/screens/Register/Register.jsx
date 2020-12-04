@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Register(props) {
   const [formData, setFormData] = useState({
@@ -29,6 +29,7 @@ function Register(props) {
         >
           <label>
             Username:
+            <br />
             <input
               type="text"
               name="username"
@@ -38,6 +39,7 @@ function Register(props) {
           </label>
           <label>
             Email:
+            <br />
             <input
               type="text"
               name="email"
@@ -47,6 +49,7 @@ function Register(props) {
           </label>
           <label>
             Password:
+            <br />
             <input
               type="text"
               name="password"
@@ -54,6 +57,9 @@ function Register(props) {
               onChange={handleChange}
             />
           </label>
+          <p>
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
           <button className="scoreboard-button">Submit</button>
         </form>
       </div>
