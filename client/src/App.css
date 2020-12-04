@@ -26,9 +26,14 @@ button {
 }
 
 .container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  background-color: rgb(213, 193, 114);
+  border: 15px solid rgba(191, 152, 91);
+  outline: 5px solid rgb(213, 193, 114);
+  border-style: double;
   height: 80%;
   width: 80%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,4 +45,13 @@ button {
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
+}
+
+.logo {
+  background: url("../src/assets/logo.png") center center no-repeat;
+  background-size: cover;
+  /* border: 2px solid red; */
+  height: 10%;
+  width: 80%;
+  margin-bottom: 10%;
 }

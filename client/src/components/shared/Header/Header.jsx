@@ -6,11 +6,13 @@ function Header(props) {
   const { currentUser, handleLogout } = props;
   return (
     <div className="header">
-      <h1>High Noon</h1>
+      <div className="header-logo"></div>
       {currentUser ? (
         <div className="header-user-info">
           <p>{currentUser.username}</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout} className="scoreboard-button">
+            Logout
+          </button>
         </div>
       ) : (
         <Link to="login">Login</Link>

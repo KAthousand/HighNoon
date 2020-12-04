@@ -18,8 +18,9 @@ function CreateComment(props) {
   };
 
   return (
-    <div className="create-comment">
+    <div className="comment">
       <form
+        className="comment-form"
         onSubmit={(e) => {
           e.preventDefault();
           try {

@@ -1,3 +1,16 @@
-.score-card-button-container {
+.player-score-content {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.player-score-content h4 {
+  background-color: rgb(191, 152, 91);
+  margin-bottom: 5px;
+  padding: 10px;
   /* border: 2px solid blue; */
+}
+
+.player-score-content h1 {
+  background-color: rgb(170, 107, 72);
+  padding: 30px 20px;
 }

@@ -27,13 +27,15 @@ function Layout(props) {
           }
         ></div>
         {gameStart && (
-          <div
-            className={
-              outlaw
-                ? "outlaw-container one-transition"
-                : "outlaw-container-two two-transition"
-            }
-          ></div>
+          <div className="fixed-position">
+            <div
+              className={
+                outlaw
+                  ? "outlaw-container one-transition"
+                  : "outlaw-container-two two-transition"
+              }
+            ></div>
+          </div>
         )}
         <div
           className={

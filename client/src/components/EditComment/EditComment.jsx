@@ -17,6 +17,7 @@ function EditComment(props) {
   return (
     <div>
       <form
+        className="comment-form"
         onSubmit={(e) => {
           e.preventDefault();
           try {

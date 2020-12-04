@@ -26,7 +26,7 @@ function Comment(props) {
       )}
       <h5>{comment.user.username}</h5>
       {currentUser.username === comment.user.username && (
-        <>
+        <div className="comment-button-container">
           <button onClick={() => setShowEdit(!showEdit)}>Edit</button>
           <button
             onClick={(e) => {
@@ -36,7 +36,7 @@ function Comment(props) {
           >
             Delete
           </button>
-        </>
+        </div>
       )}
     </div>
   );

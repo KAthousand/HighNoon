@@ -18,24 +18,27 @@ function Score(props) {
   return (
     <React.Fragment>
       <div className="score-container">
-        <h1>{score.score}</h1>
-        <h5>{score.user.username}</h5>
-
-        {showComments === false ? (
-          <button onClick={() => setShowComments(true)}>Comments</button>
-        ) : (
-          <button onClick={() => setShowComments(false)}>Hide</button>
-        )}
-        {currentUser.username === score.user.username && (
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              handleDelete(score.id);
-            }}
-          >
-            Delete
-          </button>
-        )}
+        <div className="score-content">
+          <h1>{score.score}</h1>
+          <h5>{score.user.username}</h5>
+        </div>
+        <div className="button-container">
+          {showComments === false ? (
+            <button onClick={() => setShowComments(true)}>Comments</button>
+          ) : (
+            <button onClick={() => setShowComments(false)}>Hide</button>
+          )}
+          {currentUser.username === score.user.username && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleDelete(score.id);
+              }}
+            >
+              Delete
+            </button>
+          )}
+        </div>
       </div>
       {showComments && (
         <CreateComment

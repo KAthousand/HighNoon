@@ -37,7 +37,10 @@ function ScoresContainer(props) {
 
   return (
     <div className="container">
-      <div>
+      <div className="scoreboard-container">
+        <div className="scoreboard-header">
+          <h1>High Scores</h1>
+        </div>
         {allScores.map((score) => (
           <Score
             score={score}
@@ -51,7 +54,7 @@ function ScoresContainer(props) {
         ))}
       </div>
       <Link to="/">
-        <button>Back</button>
+        <button className="scoreboard-button">Back</button>
       </Link>
     </div>
   );

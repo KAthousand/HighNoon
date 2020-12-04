@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Register(props) {
   const [formData, setFormData] = useState({
@@ -18,44 +18,51 @@ function Register(props) {
 
   return (
     <div className="container">
-      <h3>Register</h3>
-      <form
-        className="form-container"
-        onSubmit={(e) => {
-          e.preventDefault();
-          props.handleRegister(formData);
-        }}
-      >
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </label>
-        {/* <Link to="/register">Register</Link> */}
-        <button>Submit</button>
-      </form>
+      <div className="login-reg-container">
+        <div className="logo"></div>
+        <h1>Register</h1>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            props.handleRegister(formData);
+          }}
+        >
+          <label>
+            Username:
+            <br />
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Email:
+            <br />
+            <input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Password:
+            <br />
+            <input
+              type="text"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </label>
+          <p>
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
+          <button className="scoreboard-button">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
