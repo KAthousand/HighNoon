@@ -6,7 +6,7 @@ function Header(props) {
   const { currentUser, handleLogout } = props;
   return (
     <div className="header">
-      <h1>High Noon</h1>
+      <div className="header-logo"></div>
       {currentUser ? (
         <div className="header-user-info">
           <p>{currentUser.username}</p>

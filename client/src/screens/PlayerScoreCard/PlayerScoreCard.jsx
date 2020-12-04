@@ -35,15 +35,21 @@ function PlayerScoreCard(props) {
 
   return (
     <div className="container">
-      <h4>Avg. Words Per Minute....{Math.floor(keys / 5)}</h4>
-      <h4>Total Error Count....{String(errorCount)}</h4>
-      <h4>Total Word Count.....{String(wordCount)}</h4>
-      <h2> Total Points....{String(result)}</h2>
+      <div className="logo"></div>
+      <div className="player-score-content">
+        <h4>Avg. Words Per Minute....{Math.floor(keys / 5)}</h4>
+        <h4>Total Error Count........{String(errorCount)}</h4>
+        <h4>Total Word Count.........{String(wordCount)}</h4>
+        <h1> Total Points....{String(result)}</h1>
+      </div>
       <div className="score-card-button-container">
         <Link to="/">
-          <button onClick={() => resetGame(keys)}>Main Menu</button>
+          <button onClick={() => resetGame(keys)} className="scoreboard-button">
+            Main Menu
+          </button>
         </Link>
         <button
+          className="scoreboard-button"
           onClick={(e) => {
             e.preventDefault();
             handleCreate({

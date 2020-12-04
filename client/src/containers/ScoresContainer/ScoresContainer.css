@@ -11,6 +11,8 @@
   /* border: 2px solid red; */
   text-align: center;
   margin-bottom: 10%;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .scoreboard-button {
@@ -18,5 +20,6 @@
   margin: 10px;
   border: none;
   background-color: rgb(191, 152, 91);
-  color: rgb(213, 193, 114);
+  color: white;
+  /* color: rgb(216, 206, 151); */
 }

@@ -18,3 +18,11 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.header-logo {
+  background: url("../../../assets/logo.png") center center no-repeat;
+  background-size: cover;
+  /* border: 2px solid red; */
+  height: 4vh;
+  width: 18vw;
+}

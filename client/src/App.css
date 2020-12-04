@@ -46,3 +46,12 @@ button {
   display: flex;
   flex-direction: column;
 }
+
+.logo {
+  background: url("../src/assets/logo.png") center center no-repeat;
+  background-size: cover;
+  /* border: 2px solid red; */
+  height: 10%;
+  width: 80%;
+  margin-bottom: 10%;
+}

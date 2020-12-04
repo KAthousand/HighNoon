@@ -5,9 +5,7 @@ import "./Instructions.css";
 function Instructions(props) {
   return (
     <div className="container">
-      <div className="logo">
-        <h1>High Noon</h1>
-      </div>
+      <div className="logo"></div>
       <div className="instructions-container">
         <h1>How to Play:</h1>
         {/* <p>Type the words as they appear.</p>
@@ -15,15 +13,17 @@ function Instructions(props) {
         <p>If the word turns red, you have made an error!</p>
         <p>Words must be error free to be submitted!</p>
         <p>You will win points for every correctly submitted word,</p> */}
-        <p>
-          Type the words as they appear. Press SPACEBAR to submit your word! If
-          the given word turns red, you have made an error! Words must be error
-          free to be submitted! You will win points for every correctly
-          submitted word, as well as points for your average Words Per Minute!
-          You will lose points for any errors!
-        </p>
+        <div className="instructions-body">
+          <p>
+            Type the words as they appear. Press SPACEBAR to submit your word!
+            If the given word turns red, you have made an error! Words must be
+            error free to be submitted! You will win points for every correctly
+            submitted word, as well as points for your average Words Per Minute!
+            You will lose points for any errors!
+          </p>
+        </div>
         <Link to="/game">
-          <button>Start</button>
+          <button className="scoreboard-button">Start!</button>
         </Link>
       </div>
     </div>
