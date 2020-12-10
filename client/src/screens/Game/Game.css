@@ -71,3 +71,23 @@
   letter-spacing: 3px;
   border: 5px solid black;
 }
+
+@media (max-width: 1500px) {
+  .word-container h1,
+  .word-container h1 {
+    font-size: 1.25em;
+  }
+}
+@media (max-width: 1200px) {
+  .word-container h1,
+  .word-container h1 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 800px) {
+  .word-container h1,
+  .word-container h1 {
+    font-size: 0.85em;
+  }
+}

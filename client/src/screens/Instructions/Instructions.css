@@ -12,6 +12,8 @@
 .instructions-body {
   margin: 20px;
   text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .instructions-body p {

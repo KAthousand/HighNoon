@@ -121,3 +121,49 @@
 .drama-transition {
   height: 10vh;
 }
+
+@media (max-width: 1800px) {
+  .fixed-position {
+    width: 1000px;
+  }
+  .building {
+    background-size: 1000px;
+  }
+  .outlaw-container {
+    background-size: 150px;
+    top: 15%;
+  }
+  .one-transition {
+    left: 29%;
+  }
+  .outlaw-container-two {
+    background-size: 150px;
+    top: 15%;
+  }
+  .two-transition {
+    left: -28%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .fixed-position {
+    width: 700px;
+  }
+  .building {
+    background-size: 1000px;
+  }
+  .outlaw-container {
+    background-size: 150px;
+    top: 15%;
+  }
+  .one-transition {
+    left: 40%;
+  }
+  .outlaw-container-two {
+    background-size: 150px;
+    top: 15%;
+  }
+  .two-transition {
+    left: -40%;
+  }
+}
