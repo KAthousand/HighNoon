@@ -4,6 +4,8 @@
 
 _**High Noon** is a game designed to help increase type speed and accuracy. A user will create an account, play the game, and receive a score based on their ability to type. They will be able to post their scores to a High Score board, as well as comment on the scores posted by other players._
 
+http://high-noon.surge.sh/
+
 
 <br>
 
